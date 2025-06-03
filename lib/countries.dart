@@ -5952,7 +5952,7 @@ const List<Country> countries = [
     code: "SA",
     dialCode: "966",
     minLength: 9,
-    maxLength: 10,
+    maxLength: 9,
   ),
   Country(
     name: "Senegal",
