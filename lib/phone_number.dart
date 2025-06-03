@@ -54,6 +54,19 @@ class PhoneNumber {
 
   bool isValidNumber() {
     Country country = getCountry(completeNumber);
+    
+    // Special validation for Saudi Arabia
+    if (country.code == "SA") {
+      // If number starts with 8 or 9, length should be 10
+      if (number.startsWith('8') || number.startsWith('9')) {
+        return number.length == 10;
+      } else {
+        // For other numbers, length should be 9
+        return number.length == 9;
+      }
+    }
+    
+    // Default validation for all other countries
     if (number.length < country.minLength) {
       return false;
     }
